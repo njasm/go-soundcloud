@@ -80,7 +80,7 @@ func (s *SoundcloudApi) PasswordCredentialsToken(u string, p string) error {
 	s.httpClient = s.conf.Client(oauth2.NoContext, tok)
 	return err
 }
-
+func (s *SoundcloudApi) SetMaxIdleConnectionsPerHost(int) err {}
 // Get Makes a get request to the specified url resource, p is adicional url params
 func (s *SoundcloudApi) Get(url string, p *UrlParams) (*http.Response, error) {
 	url = buildUrlWithParams(url, p)
